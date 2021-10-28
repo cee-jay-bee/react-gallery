@@ -1,5 +1,6 @@
 import React from "react";
 import {useState} from "react";
+import axios from "axios";
 
 function GalleryItem ( props ) {
     // const [name, setName] = useState( null );
@@ -9,13 +10,27 @@ function GalleryItem ( props ) {
         setShow(!show);
     }
 
+    const changeLikes = ()=>{
+        axios.put(`/gallery/like/${props.image.id}`).then (( response )=>{
+          console.log(response.data);
+          props.getImages();
+        }).catch( ( err )=>{
+          console.log( err );
+          alert( 'problem!' );
+        })
+    }
+
+    
+
     return(
-        <div>
+        <div className="images">
             {
                 show ?
-                <img onClick={ toggleShow } src={props.image.path} />:
-                <h1 onClick={ toggleShow }>{props.image.description}</h1>
+                <img className="lifeImage" onClick={ toggleShow } src={props.image.path} />:
+                <span onClick={ toggleShow }>{props.image.description}</span>
             }
+            <button className="likeButton" onClick={ changeLikes }>Like</button>
+            <p>Number of Likes: { props.image.likes }</p>
         </div>
     )
 }
