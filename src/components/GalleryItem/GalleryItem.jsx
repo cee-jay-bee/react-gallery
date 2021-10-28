@@ -12,15 +12,12 @@ function GalleryItem ( props ) {
 
     const changeLikes = ()=>{
         axios.put(`/gallery/like/${props.image.id}`).then (( response )=>{
-          console.log(response.data);
           props.getImages();
         }).catch( ( err )=>{
           console.log( err );
           alert( 'problem!' );
         })
     }
-
-    
 
     return(
         <div className="images">
