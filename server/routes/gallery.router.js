@@ -28,4 +28,17 @@ router.get('/', (req, res) => {
     })
 }); // END GET Route
 
+router.post('/', (req, res)=>{
+    console.log('/ post hit:', req.body)
+    const queryString = 'INSERT INTO images (path, description, likes) VALUES ($1, $2, $3)';
+    let values = [req.body.path, req.body.description, 0];
+    
+    pool.query(queryString, values).then((results)=>{
+        res.sendStatus(201);
+    }).catch((err)=>{
+        console.log('error adding task to database', err);
+        res.sendStatus(500);
+    })  
+})
+
 module.exports = router;

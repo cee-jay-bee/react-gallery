@@ -3,6 +3,7 @@ import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
 import {useEffect} from "react";
 import axios from "axios";
+import PostImage from "../PostImage/PostImage"
 
 function App() {
   const [images, setImages] = useState( [] );
@@ -27,6 +28,7 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <GalleryList images = { images } getImages = {getImages} />
+        <PostImage getImages = {getImages}/>
       </div>
   );
 }
