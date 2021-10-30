@@ -11,7 +11,10 @@ function GalleryItem ( props ) {
     }
 
     const changeLikes = ()=>{
-        axios.put(`/gallery/like/${props.image.id}`).then (( response )=>{
+        let objectToSend = {
+            likes: props.image.likes + 1
+        }
+        axios.put(`/gallery/like/${props.image.id}`, {likes: ++props.image.likes}).then (( response )=>{
           props.getImages();
         }).catch( ( err )=>{
           console.log( err );
