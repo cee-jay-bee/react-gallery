@@ -27,8 +27,8 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList images = { images } getImages = {getImages} />
         <PostImage getImages = {getImages}/>
+        <GalleryList images = { images } getImages = {getImages} />
       </div>
   );
 }

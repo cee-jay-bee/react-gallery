@@ -28,6 +28,7 @@ router.get('/', (req, res) => {
     })
 }); // END GET Route
 
+// POST ROUTE
 router.post('/', (req, res)=>{
     console.log('/ post hit:', req.body)
     const queryString = 'INSERT INTO images (path, description, likes) VALUES ($1, $2, $3)';
@@ -40,5 +41,18 @@ router.post('/', (req, res)=>{
         res.sendStatus(500);
     })  
 })
+
+// DELETE ROUTE
+router.delete('/delete/:id', (req,res)=> {
+    
+    const queryString = `DELETE FROM images WHERE id='${req.params.id}';`;
+  
+    pool.query(queryString).then((results)=>{
+      res.sendStatus(200);
+    }).catch((err)=>{
+      console.log('error deleting task from database:', err);
+      res.sendStatus(500);
+    })
+  })
 
 module.exports = router;
