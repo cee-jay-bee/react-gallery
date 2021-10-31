@@ -31,16 +31,14 @@ function PostImage ( props ) {
             alert( 'problem!' );
           })
     }
-
-    
-    
-
     return(
         <div>
-            <h1>Add Image to Gallery</h1>
-            <input type="text" placeholder="image url" onChange={ ( event )=> handlePathChange(event) } />
-            <input type="text" placeholder="description" onChange={ ( event )=> handleDescChange(event) } />
-            <button onClick={ addImage }>Add</button>
+            <form>
+                <p className="addImage">Add Image to Gallery</p>
+                <input type="text" placeholder="image url" onChange={ ( event )=> handlePathChange(event) } />
+                <input type="text" placeholder="description" onChange={ ( event )=> handleDescChange(event) } />
+                <button onClick={ addImage }>Add</button>
+            </form>
         </div>
     )
 }

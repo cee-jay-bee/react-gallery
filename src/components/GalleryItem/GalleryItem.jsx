@@ -11,15 +11,24 @@ function GalleryItem ( props ) {
     }
 
     const changeLikes = ()=>{
-        let objectToSend = {
-            likes: props.image.likes + 1
-        }
+
         axios.put(`/gallery/like/${props.image.id}`, {likes: ++props.image.likes}).then (( response )=>{
           props.getImages();
         }).catch( ( err )=>{
           console.log( err );
           alert( 'problem!' );
         })
+    }
+
+    const deleteImage = () => {
+        let deleteID = props.image.id;
+
+        axios.delete(`/gallery/delete/${deleteID}`).then (( response )=>{
+            props.getImages();
+          }).catch( ( err )=>{
+            console.log( err );
+            alert( 'problem!' );
+          })
     }
 
     return(
@@ -30,6 +39,7 @@ function GalleryItem ( props ) {
                 <span onClick={ toggleShow }>{props.image.description}</span>
             }
             <button className="likeButton" onClick={ changeLikes }>Like</button>
+            <button className="deleteButton" onClick={ deleteImage }>Delete</button>
             <p>Number of Likes: { props.image.likes }</p>
         </div>
     )
