@@ -27,10 +27,6 @@ An image gallery that allows the user to submit photos, like the photos, and del
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="40px" width="40px" /></a><a href="https://nodejs.org/en/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" height="40px" width="40px" /></a><a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" height="40px" width="40px" /></a><a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" height="40px" width="40px" /></a>
 
-## Getting Started
-
-What do I need to do or know before attempting to use your project
-
 ### Prerequisites
 
 Express - a web framework for Node.js
@@ -45,7 +41,6 @@ There is a database.sql file to use to set up a database. After that once you fo
 Copy an image URL of an image that you want to add. Put that in the path "Add Image" box. Then type out a detailed description of that image. Once you click add, it will be added to the DOM.
 
 From there, you can like photos, or delete photos by clicking the relevant button.
-
 
 ## Acknowledgements
 
