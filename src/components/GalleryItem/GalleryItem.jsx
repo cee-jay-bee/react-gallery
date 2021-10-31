@@ -21,6 +21,7 @@ function GalleryItem ( props ) {
     }
 
     const deleteImage = () => {
+        
         let deleteID = props.image.id;
 
         axios.delete(`/gallery/delete/${deleteID}`).then (( response )=>{
@@ -36,8 +37,9 @@ function GalleryItem ( props ) {
             {
                 show ?
                 <img className="lifeImage" onClick={ toggleShow } src={props.image.path} />:
-                <span onClick={ toggleShow }>{props.image.description}</span>
+                <h4 onClick={ toggleShow } className="description">{props.image.description}</h4>
             }
+            <br />
             <button className="likeButton" onClick={ changeLikes }>Like</button>
             <button className="deleteButton" onClick={ deleteImage }>Delete</button>
             <p>Number of Likes: { props.image.likes }</p>
