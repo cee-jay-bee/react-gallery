@@ -8,8 +8,9 @@ function GalleryList ( props ) {
     return(
         <div>
             <h1>Photos of My Life</h1>
+            <div className="galleryOfPics">
             { props.images.map ( image =>(<GalleryItem image = { image } getImages={props.getImages} />))}
-        
+            </div>
         </div>
     )
 }

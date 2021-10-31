@@ -13,29 +13,45 @@
   font-size: 1.5em;
 }
 
-.images {
-  display: inline;
-}
-
 .lifeImage{
-  border: 100px, solid, #555;
+  border-radius: 15px;
+  height: 150px;
+  width: 125px;
+  margin: 5px;
+  padding: 25px;
 }
 
 .likeButton {
-  top: 10%;
-  left: 10%;
-  transform: translate(-25%, -25%);
-  -ms-transform: translate(-25%, -25%);
-  background-color: #555;
-  color: white;
-  font-size: 16px;
-  padding: 6px 12px;
-  border: none;
-  cursor: pointer;
+  width: 75px;
+  height: 25px;
+  background-color: #09a99e;
+  border: none ;
   border-radius: 5px;
+  color: white;
+  font-size: 12pt;
 }
 
-.likeButton:hover {
-  background-color: #09a99e;
+.deleteButton {
+  width: 75px;
+  height: 25px;
+  background-color: #555;
+  border: none ;
+  border-radius: 5px;
+  color: white;
+  font-size: 12pt;
+}
+
+.galleryOfPics {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: ivory;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+    
 }
 
